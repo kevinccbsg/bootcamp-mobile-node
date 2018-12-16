@@ -1,0 +1,25 @@
+{
+  "name": "bootcamp-mobile-nodepop",
+  "version": "1.0.0",
+  "description": "A second hand products API",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinccbsg/bootcamp-mobile-node.git"
+  },
+  "keywords": [
+    "node",
+    "mongodb",
+    "nodepop",
+    "second-hand-API"
+  ],
+  "author": "Kevin Julián Martínez Escobar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinccbsg/bootcamp-mobile-node/issues"
+  },
+  "homepage": "https://github.com/kevinccbsg/bootcamp-mobile-node#readme"
+}
