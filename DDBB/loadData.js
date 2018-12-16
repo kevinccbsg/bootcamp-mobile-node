@@ -1,4 +1,3 @@
-'use sctrict'
 const config = require('config');
 const { anuncios } = require('./mockData.json');
 const Anuncio = require('../models/Anuncio');

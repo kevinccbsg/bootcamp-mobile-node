@@ -1,6 +1,4 @@
-'use strict'
-const MongoClient = require('mongodb').MongoClient;
-const isArray = require('lodash/isArray');
+const { MongoClient } = require('mongodb');
 
 module.exports = (config) => {
   if (!config.url || !config.dbName || !config.collection) {
@@ -49,6 +47,6 @@ module.exports = (config) => {
       } finally {
         client.close();
       }
-    }
+    },
   };
 };

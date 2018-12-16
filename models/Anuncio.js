@@ -1,4 +1,3 @@
-'use strict'
 const path = require('path');
 const stores = require('require-all')({
   dirname: __dirname,

@@ -1,13 +1,12 @@
-'use strict'
 
 let anuncios = [];
 
-module.exports = (config) => {
-  return {
-    getAnuncios: async (query, limit, sort) => {
+module.exports = () => (
+  {
+    getAnuncios: async (query, limit) => {
       let queryResult = anuncios;
       if (limit) queryResult = queryResult.slice(0, limit);
-      return anuncios;
+      return queryResult;
     },
     saveAnuncios: async (items) => {
       anuncios = anuncios.concat(items);
@@ -16,6 +15,6 @@ module.exports = (config) => {
     deleteAll: async () => {
       anuncios = [];
       return Promise.resolve([]);
-    }
-  };
-};
+    },
+  }
+);
