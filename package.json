@@ -4,6 +4,7 @@
   "description": "A second hand products API",
   "main": "app.js",
   "scripts": {
+    "installDB": "node ./DDBB/loadData.js",
     "dev": "NODE_ENV=development DEBUG=Nodepop:* node ./bin/www",
     "start": "NODE_ENV=production node ./bin/www",
     "test": "jest"
@@ -28,6 +29,9 @@
     "config": "^3.0.0",
     "debug": "^4.1.0",
     "express": "^4.16.4",
-    "morgan": "^1.9.1"
+    "lodash": "^4.17.11",
+    "mongodb": "^3.1.10",
+    "morgan": "^1.9.1",
+    "require-all": "^3.0.0"
   }
 }
