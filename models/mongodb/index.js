@@ -24,18 +24,31 @@ module.exports = (config) => {
         client.close();
       }
     },
-    saveAnuncio: async (items) => {
+    saveAnuncios: async (items) => {
       try {
         await client.connect();
         const db = client.db(dbName);
         const col = db.collection(collection);
-        const r = await col.insertMany([].concat(items));
-        return r;
+        const { insertedIds } = await col.insertMany([].concat(items));
+        return insertedIds;
       } catch (e) {
         throw new Error(e);
       } finally {
         client.close();
       }
     },
+    deleteAll: async () => {
+      try {
+        await client.connect();
+        const db = client.db(dbName);
+        const col = db.collection(collection);
+        await col.deleteMany({});
+        return;
+      } catch (e) {
+        throw new Error(e);
+      } finally {
+        client.close();
+      }
+    }
   };
 };

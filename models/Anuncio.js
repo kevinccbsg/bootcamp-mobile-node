@@ -9,5 +9,7 @@ module.exports = (config) => {
   const ddbb = stores[config.type].index;
   return {
     getAnuncios: ddbb(config).getAnuncios,
+    saveAnuncios: ddbb(config).saveAnuncios,
+    deleteAll: ddbb(config).deleteAll,
   };
 };
