@@ -8,4 +8,7 @@ module.exports = {
     dbName: 'nodepop',
     type: 'mongodb',
   },
+  jwt: {
+    seed: 'mysecretsuperseed',
+  },
 };
