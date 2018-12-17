@@ -1,11 +1,14 @@
 const express = require('express');
 const logger = require('morgan');
 const config = require('config');
+const bodyParser = require('body-parser');
 const api = require('./routes/api');
 
 const app = express();
 
 app.use(logger(config.get('logger.format')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/api', api);
 
