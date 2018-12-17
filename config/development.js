@@ -6,7 +6,6 @@ module.exports = {
   ddbb: {
     url: 'mongodb://localhost:27017',
     dbName: 'nodepop',
-    collection: 'anuncios',
     type: 'mongodb',
   },
 };
