@@ -7,4 +7,5 @@ const stores = require('require-all')({
 module.exports = {
   Anuncio: config => stores[config.type].Anuncio(config),
   User: config => stores[config.type].User(config),
+  Tag: config => stores[config.type].Tag(config),
 };

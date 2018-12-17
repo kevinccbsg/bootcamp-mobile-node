@@ -21,7 +21,7 @@ app.use((req, res, next) => {
   return next(err);
 });
 
-app.use((err, req, res, next) => {
+app.use((err, req, res, next) => { // eslint-disable-line
   debug(err.stack);
   const { status, error } = errorResponses(err.message);
   return res.status(status).json({
