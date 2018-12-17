@@ -24,6 +24,7 @@ module.exports = (config) => {
         await col.insertOne(userEncripted);
         return { name: user.name, email: user.email };
       } catch (e) {
+        if (e.message.includes('E11000')) throw new Error('E11000');
         throw new Error(e);
       } finally {
         client.close();
