@@ -1,6 +1,6 @@
 const config = require('config');
 const debug = require('debug')('Nodepop:Anuncio');
-const Anuncio = require('../models/Anuncio');
+const { Anuncio } = require('../models');
 
 module.exports.getAnuncio = async (req, res, next) => {
   try {
