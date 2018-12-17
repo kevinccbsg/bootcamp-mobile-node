@@ -16,15 +16,15 @@ app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  const err = new Error('Not Found');
+  const err = new Error('404');
   err.status = 404;
   return next(err);
 });
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   debug(err.stack);
   const { status, error } = errorResponses(err.message);
-  res.status(status).json({
+  return res.status(status).json({
     success: false,
     error,
   });
