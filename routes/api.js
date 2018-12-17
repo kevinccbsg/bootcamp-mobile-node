@@ -1,7 +1,7 @@
 const express = require('express');
 const { getAnuncio } = require('../controllers/anuncio');
 const { register, authenticate } = require('../controllers/user');
-var authRoute = require('./authRoute');
+const authRoute = require('./authRoute');
 
 const router = express.Router();
 
