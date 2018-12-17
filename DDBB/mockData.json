@@ -21,5 +21,41 @@
       "foto": "images/anuncios/iphone.png",
       "tags": [ "movie", "vintage"]
     }
+  ],
+  "users": [
+    {
+      "name": "nodeadmin",
+      "email": "nodeadmin@test.test",
+      "password": "nodeadmissuper"
+    },
+    {
+      "name": "kevinccbsg",
+      "email": "kevinccbsg@test.test",
+      "password": "supersegura"
+    },
+    {
+      "name": "github",
+      "email": "github@test.test",
+      "password": "gatopulpo"
+    },
+    {
+      "name": "keepcoding",
+      "email": "keepcoding@test.test",
+      "password": "keepcoding1234"
+    }
+  ],
+  "tags": [
+    {
+      "title": "lifestyle"
+    },
+    {
+      "title": "movie"
+    },
+    {
+      "title": "vintage"
+    },
+    {
+      "title": "motor"
+    }
   ]
 }

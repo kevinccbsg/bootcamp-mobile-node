@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
-    "installDB": "node ./DDBB/loadData.js",
+    "installDB": "DEBUG=Nodepop:* node ./DDBB/loadData.js",
     "dev": "NODE_ENV=development DEBUG=Nodepop:* node ./bin/www",
     "start": "NODE_ENV=production node ./bin/www",
     "test": "jest"
@@ -27,9 +27,12 @@
   },
   "homepage": "https://github.com/kevinccbsg/bootcamp-mobile-node#readme",
   "dependencies": {
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
     "config": "^3.0.0",
     "debug": "^4.1.0",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",
     "mongodb": "^3.1.10",
     "morgan": "^1.9.1",
