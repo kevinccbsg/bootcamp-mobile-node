@@ -14,13 +14,32 @@ module.exports = (config) => {
         const db = client.db(dbName);
         const col = db.collection('users');
         col.createIndex('email', { unique: true });
-        const password = auth(10).getHash(user.password);
+        const password = await auth({
+          saltRounds: 10,
+        }).getHash(user.password);
         const userEncripted = {
           ...user,
           password,
         };
-        const result = await col.insertOne(userEncripted);
+        await col.insertOne(userEncripted);
         return { name: user.name, email: user.email };
+      } catch (e) {
+        throw new Error(e);
+      } finally {
+        client.close();
+      }
+    },
+    isAuth: async (email, userPassword) => {
+      try {
+        await client.connect();
+        const db = client.db(dbName);
+        const col = db.collection('users');
+        const user = await col.findOne({ email });
+        const isAuth = await auth({
+          saltRounds: 10,
+        }).isAuth(userPassword, user.password);
+        if (!isAuth) throw new Error('403:password');
+        return isAuth;
       } catch (e) {
         throw new Error(e);
       } finally {
