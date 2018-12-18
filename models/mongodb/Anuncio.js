@@ -18,7 +18,7 @@ module.exports = (config) => {
         if (skip) cursor.skip(Number(skip));
         return cursor.toArray();
       } catch (e) {
-        throw new Error(e);
+        throw e;
       } finally {
         client.close();
       }
@@ -31,7 +31,7 @@ module.exports = (config) => {
         const { insertedIds } = await col.insertMany([].concat(items));
         return insertedIds;
       } catch (e) {
-        throw new Error(e);
+        throw e;
       } finally {
         client.close();
       }
@@ -44,7 +44,7 @@ module.exports = (config) => {
         await col.deleteMany({});
         return;
       } catch (e) {
-        throw new Error(e);
+        throw e;
       } finally {
         client.close();
       }
@@ -58,7 +58,7 @@ module.exports = (config) => {
         await col.insert(user);
         return;
       } catch (e) {
-        throw new Error(e);
+        throw e;
       } finally {
         client.close();
       }

@@ -24,8 +24,8 @@ module.exports = (config) => {
         await col.insertOne(userEncripted);
         return { name: user.name, email: user.email };
       } catch (e) {
-        if (e.message.includes('E11000')) throw new Error('E11000');
-        throw new Error(e);
+        if (e.message.includes('E11000')) throw 'E11000';
+        throw e;
       } finally {
         client.close();
       }
@@ -39,10 +39,10 @@ module.exports = (config) => {
         const isAuth = await auth({
           saltRounds: 10,
         }).isAuth(userPassword, user.password);
-        if (!isAuth) throw new Error('403:password');
+        if (!isAuth) throw '403:password';
         return isAuth;
       } catch (e) {
-        throw new Error(e);
+        throw e;
       } finally {
         client.close();
       }
@@ -55,7 +55,7 @@ module.exports = (config) => {
         await col.deleteMany({});
         return;
       } catch (e) {
-        throw new Error(e);
+        throw e;
       } finally {
         client.close();
       }
