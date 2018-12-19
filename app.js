@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-  res.write(`
+  return res.status(200).send(`
     <div>
       <h1>Nodepop API</h1>
       <h4>${req.t('routes')}</h4>
