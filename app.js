@@ -2,9 +2,11 @@ const express = require('express');
 const logger = require('morgan');
 const config = require('config');
 const bodyParser = require('body-parser');
+const swaggerUi = require('swagger-ui-express');
 const debug = require('debug')('Nodepop:App');
 const api = require('./routes/api');
 const errorResponses = require('./lib/errorResponses');
+const swaggerDocument = require('./docs/swagger.json');
 
 const app = express();
 
@@ -12,6 +14,7 @@ app.use(logger(config.get('logger.format')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api', api);
 
 // catch 404 and forward to error handler
