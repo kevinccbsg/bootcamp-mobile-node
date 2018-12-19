@@ -49,19 +49,5 @@ module.exports = (config) => {
         client.close();
       }
     },
-    registerUser: async (user) => {
-      try {
-        await client.connect();
-        const db = client.db(dbName);
-        const col = db.collection('users');
-
-        await col.insert(user);
-        return;
-      } catch (e) {
-        throw e;
-      } finally {
-        client.close();
-      }
-    },
   };
 };

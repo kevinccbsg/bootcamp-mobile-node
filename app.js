@@ -14,7 +14,7 @@ const swaggerDocument = require('./docs/swagger.json');
 i18n.configure({
   locales: ['en', 'es'],
   api: {
-    '__': 't',
+    __: 't',
   },
   directory: path.join(__dirname, 'locales'),
 });
@@ -27,6 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
+  debug('Index routes');
   return res.status(200).send(`
     <div>
       <h1>Nodepop API</h1>

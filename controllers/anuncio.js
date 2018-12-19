@@ -18,11 +18,11 @@ module.exports.getAnuncio = async (req, res, next) => {
     debug('Getting Anuncios with Filter');
     debug(filter);
     let sortQuery = null;
-    if (sort) sortQuery = sort.split(',').map((key) => ({ [key]: 1 }));
-    debug('Sort query')
+    if (sort) sortQuery = sort.split(',').map(key => ({ [key]: 1 }));
+    debug('Sort query');
     debug(sortQuery);
     debug('limit');
-    debug(limit)
+    debug(limit);
     const anuncios = await Anuncio(config.get('ddbb'))
       .getAnuncios(filter, limit, sortQuery, start);
     return res.json({ success: true, anuncios });

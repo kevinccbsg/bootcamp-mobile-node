@@ -35,6 +35,7 @@
     "express": "^4.16.4",
     "i18n": "^0.8.3",
     "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
     "mongodb": "^3.1.10",
     "morgan": "^1.9.1",
     "require-all": "^3.0.0",
