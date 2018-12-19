@@ -36,6 +36,7 @@ module.exports = (config) => {
         const db = client.db(dbName);
         const col = db.collection('users');
         const user = await col.findOne({ email });
+        if (!user) throw '403:password';
         const isAuth = await auth({
           saltRounds: 10,
         }).isAuth(userPassword, user.password);
