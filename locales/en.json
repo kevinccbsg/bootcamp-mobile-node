@@ -1,0 +1,10 @@
+{
+  "E11000": "User already exists",
+  "403:password": "Wrong user or password",
+  "403:noToken": "No token Provided",
+  "403:noTokenVerified": "No token Verified",
+  "400": "Bad Request",
+  "400:email": "Bad Request. Invalid Email",
+  "404": "Not Found",
+  "500": "Internal server Error"
+}

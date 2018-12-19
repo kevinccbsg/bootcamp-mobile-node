@@ -1,0 +1,10 @@
+{
+  "E11000": "Usuario ya existe",
+  "403:password": "Contraseña o Usuario incorrecto",
+  "403:noToken": "No se ha proporcionado token",
+  "403:noTokenVerified": "Token invalido",
+  "400": "Error en la petición",
+  "400:email": "Error en la petición. Correo incorrecto",
+  "404": "No encontrado",
+  "500": "Error interno del servidor"
+}

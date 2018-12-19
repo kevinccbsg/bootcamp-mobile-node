@@ -39,6 +39,15 @@
         ],
         "parameters": [
           {
+            "in": "header",
+            "name": "Accept-Language",
+            "type": "string",
+            "enum": [
+              "en",
+              "es"
+            ]
+          },
+          {
             "in": "body",
             "name": "body",
             "description": "Pet object that needs to be added to the store",
@@ -75,6 +84,15 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "in": "header",
+            "name": "Accept-Language",
+            "type": "string",
+            "enum": [
+              "en",
+              "es"
+            ]
+          },
           {
             "in": "body",
             "name": "body",
@@ -114,6 +132,15 @@
           "application/json"
         ],
         "parameters": [
+          {
+            "in": "header",
+            "name": "Accept-Language",
+            "type": "string",
+            "enum": [
+              "en",
+              "es"
+            ]
+          },
           {
             "name": "tag",
             "in": "query",
