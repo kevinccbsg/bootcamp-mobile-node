@@ -25,6 +25,28 @@ app.use(i18n.init);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
+app.get('/', (req, res) => {
+  res.write(`
+    <div>
+      <h1>Nodepop API</h1>
+      <h4>${req.t('routes')}</h4>
+      <ul>
+        <li>
+          <a href="/api-docs">/api-docs</a>
+        </li>
+        <li>
+          <a href="/api/v1/user/register">/api/v1/register</a>
+        </li>
+        <li>
+          <a href="/api/v1/user/login">/api/v1/user/login</a>
+        </li>
+        <li>
+          <a href="/api/v1/anuncios">/api/v1/anuncios</a>
+        </li>
+      </ul>
+    </div>
+  `);
+});
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api', api);
 

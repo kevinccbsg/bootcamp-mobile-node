@@ -6,5 +6,6 @@
   "400": "Bad Request",
   "400:email": "Bad Request. Invalid Email",
   "404": "Not Found",
-  "500": "Internal server Error"
+  "500": "Internal server Error",
+  "routes": "Routes"
 }

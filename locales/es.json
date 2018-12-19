@@ -6,5 +6,6 @@
   "400": "Error en la petición",
   "400:email": "Error en la petición. Correo incorrecto",
   "404": "No encontrado",
-  "500": "Error interno del servidor"
+  "500": "Error interno del servidor",
+  "routes": "Rutas"
 }
