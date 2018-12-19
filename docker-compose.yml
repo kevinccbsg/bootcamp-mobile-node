@@ -1,0 +1,22 @@
+version: '2.1'
+services:
+  nodepop-api:
+    container_name: nodepop-api
+    build: ./.
+    depends_on:
+      mongo-nodepop:
+        condition: service_started
+    networks:
+      - mongodb
+  mongo-nodepop:
+    container_name: mongo-nodepop
+    image: mongo
+    volumes:
+      - "./mongo-compose/data/db:/data/db"
+    ports:
+      - "27017:27017"
+    command: mongod --port 27017
+    networks:
+      - mongodb
+networks:
+  mongodb:

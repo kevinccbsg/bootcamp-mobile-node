@@ -12,7 +12,7 @@ module.exports = (config) => {
         await client.connect();
         const db = client.db(dbName);
         const col = db.collection('anuncios');
-        const cursor = await col.find(query);
+        const cursor = await col.find(query, { _id: 0 });
         if (limit) cursor.limit(Number(limit));
         if (sort) cursor.sort(sort);
         if (skip) cursor.skip(Number(skip));

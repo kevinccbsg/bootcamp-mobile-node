@@ -30,6 +30,7 @@
     "body-parser": "^1.18.3",
     "config": "^3.0.0",
     "debug": "^4.1.0",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "i18n": "^0.8.3",
     "jsonwebtoken": "^8.4.0",
