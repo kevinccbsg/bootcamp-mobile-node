@@ -7,7 +7,8 @@
     "lint": "./node_modules/.bin/eslint .",
     "installDB": "DEBUG=Nodepop:* node ./DDBB/loadData.js",
     "dev": "NODE_ENV=development DEBUG=Nodepop:* node ./bin/www",
-    "start": "NODE_ENV=production node ./bin/www"
+    "start": "NODE_ENV=production node ./bin/www",
+    "deploy": "bash -c 'docker-compose up -d'"
   },
   "repository": {
     "type": "git",
