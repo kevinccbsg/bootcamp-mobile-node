@@ -11,14 +11,14 @@
       "nombre": "iPhone 3GS",
       "venta": false,
       "precio": 50.00,
-      "foto": "images/anuncios/iphone.png",
+      "foto": "images/anuncios/iphone.jpg",
       "tags": [ "lifestyle", "mobile"]
     },
     {
       "nombre": "Matrix Movie",
       "venta": true,
       "precio": 40.00,
-      "foto": "images/anuncios/iphone.png",
+      "foto": "images/anuncios/matrix.png",
       "tags": [ "movie", "vintage"]
     }
   ],

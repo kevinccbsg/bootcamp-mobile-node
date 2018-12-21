@@ -25,6 +25,7 @@ app.use(logger(config.get('logger.format')));
 app.use(i18n.init);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   debug('Index routes');
