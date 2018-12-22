@@ -44,6 +44,12 @@ but we recommend to use *docker* instead.
 docker run --name some-mongo -p 27017:27017  -d mongo
 ```
 
+or
+
+```
+npm run docker
+```
+
 ```
 npm run installDB // load some data
 ```

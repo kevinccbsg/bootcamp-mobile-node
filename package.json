@@ -4,6 +4,7 @@
   "description": "A second hand products API",
   "main": "app.js",
   "scripts": {
+    "docker": "bash -c 'docker run --name some-mongo -p 27017:27017  -d mongo'",
     "lint": "./node_modules/.bin/eslint .",
     "installDB": "DEBUG=Nodepop:* node ./DDBB/loadData.js",
     "dev": "NODE_ENV=development DEBUG=Nodepop:* node ./bin/www",
