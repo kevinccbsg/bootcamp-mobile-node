@@ -34,6 +34,12 @@ If you have mongo on mongodb://localhost:27017 it won't be necesary to run those
 DB_URL=mongodb://localhost:27017 npm start
 ```
 
+or in cluster mode
+
+```
+DB_URL=mongodb://localhost:27017 npm run cluster
+```
+
 but we recommend to use *docker* instead.
 
 ## Running on dev
