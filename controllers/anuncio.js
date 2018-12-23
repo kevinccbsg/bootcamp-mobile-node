@@ -1,6 +1,6 @@
 const config = require('config');
 const debug = require('debug')('Nodepop:Anuncio');
-const { Anuncio } = require('../models');
+const { Anuncio, Tag } = require('../models');
 const Filter = require('../lib/filters');
 
 module.exports.getAnuncio = async (req, res, next) => {
@@ -26,6 +26,17 @@ module.exports.getAnuncio = async (req, res, next) => {
     const anuncios = await Anuncio(config.get('ddbb'))
       .getAnuncios(filter, limit, sortQuery, start);
     return res.json({ success: true, anuncios });
+  } catch (e) {
+    debug(e);
+    return next(new Error(e));
+  }
+};
+
+module.exports.getTags = async (req, res, next) => {
+  try {
+    const tags = await Tag(config.get('ddbb'))
+      .getTags();
+    return res.json({ success: true, tags: tags.map(obj => obj.title) });
   } catch (e) {
     debug(e);
     return next(new Error(e));

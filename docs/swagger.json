@@ -18,6 +18,10 @@
     {
       "name": "anuncios",
       "description": "Everything about anuncios"
+    },
+    {
+      "name": "tags",
+      "description": "Everything about tags"
     }
   ],
   "schemes": [
@@ -202,6 +206,51 @@
           }
         }
       }
+    },
+    "/tags": {
+      "get": {
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "tags": [
+          "tags"
+        ],
+        "summary": "Get Tags",
+        "description": "Get Nodepop API tags",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Accept-Language",
+            "type": "string",
+            "enum": [
+              "en",
+              "es"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Tag"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid parameter"
+          },
+          "403": {
+            "description": "Unauthorized"
+          }
+        }
+      }
     }
   },
   "securityDefinitions": {
@@ -264,10 +313,7 @@
       }
     },
     "Tag": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+      "type": "string"
     }
   }
 }

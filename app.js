@@ -46,6 +46,9 @@ app.get('/', (req, res) => {
         <li>
           <a href="/api/v1/anuncios">/api/v1/anuncios</a>
         </li>
+        <li>
+          <a href="/api/v1/anuncios">/api/v1/tags</a>
+        </li>
       </ul>
     </div>
   `);
