@@ -1,5 +1,13 @@
 version: '2.1'
 services:
+  balancer:
+    container_name: nginx-nodepop
+    build: ./balancer/.
+    depends_on:
+      nodepop-api:
+        condition: service_started
+    ports:
+      - "80:80"
   nodepop-api:
     container_name: nodepop-api
     build: ./.
@@ -7,7 +15,7 @@ services:
       mongo-nodepop:
         condition: service_started
     ports:
-      - "3000:3000"
+      - "3000"
     networks:
       - mongodb
   mongo-nodepop:
@@ -17,7 +25,7 @@ services:
       - "./db:/data/db"
     command: mongod
     ports:
-      - "27017:27017"
+      - "27017"
     networks:
       - mongodb
 networks:
