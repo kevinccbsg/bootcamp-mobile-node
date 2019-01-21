@@ -1,5 +1,20 @@
 version: '2.1'
 services:
+  balancer:
+    container_name: nginx-nodepop
+    image: nginx
+    depends_on:
+      nodepop-api:
+        condition: service_started
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./public:/var/www/app/public
+      - /home/node/apps/KC-2-Entrega:/home
+#      - /etc/letsencrypt/:/etc/letsencrypt/
+    ports:
+      - "80:80"
+    networks:
+      - mongodb
   nodepop-api:
     container_name: nodepop-api
     build: ./.
@@ -7,9 +22,11 @@ services:
       mongo-nodepop:
         condition: service_started
     ports:
-      - "3000:3000"
+      - "3000"
     networks:
       - mongodb
+    environment:
+      - DB_URL=mongodb://mongo-nodepop:27017
   mongo-nodepop:
     container_name: mongo-nodepop
     image: mongo
@@ -17,7 +34,7 @@ services:
       - "./db:/data/db"
     command: mongod
     ports:
-      - "27017:27017"
+      - "27017"
     networks:
       - mongodb
 networks:
