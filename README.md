@@ -2,6 +2,16 @@
 
 API to get access the Nodepop services.
 
+## Deployment
+
+### Static website Exercise 2
+
+![alt text](https://github.com/kevinccbsg/bootcamp-mobile-node/tree/master/demo_images/staticPage.png "Node app Page")
+
+### API website Exercise 1
+
+![alt text](https://github.com/kevinccbsg/bootcamp-mobile-node/tree/master/demo_images/nodepop.png "Node app Page")
+
 ## Getting started
 
 ### Installation
