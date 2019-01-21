@@ -8,7 +8,7 @@ API to get access the Nodepop services.
 
 [link](http://142.93.145.37/)
 
-![alt text](https://github.com/kevinccbsg/bootcamp-mobile-node/tree/master/demo_images/staticPage.png "Static Page")
+![alt text](https://github.com/kevinccbsg/bootcamp-mobile-node/blob/master/demo_images/staticPage.png "Static Page")
 
 ### API website Exercise 1
 
@@ -16,7 +16,7 @@ API to get access the Nodepop services.
 
 [swagger link](http://kjdevopsbootcamp.tk/api-docs/)
 
-![alt text](https://github.com/kevinccbsg/bootcamp-mobile-node/tree/master/demo_images/nodepop.png "Node app Page")
+![alt text](https://github.com/kevinccbsg/bootcamp-mobile-node/blob/master/demo_images/nodepopapi.png "Node app Page")
 
 ## Getting started
 
