@@ -13,7 +13,8 @@ module.exports = (config) => {
         const db = client.db(dbName);
         const col = db.collection('tags');
         const cursor = await col.find({});
-        return cursor.toArray();
+        const tags = await cursor.toArray();
+        return tags;
       } catch (e) {
         throw new Error(e);
       } finally {

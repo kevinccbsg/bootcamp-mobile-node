@@ -16,7 +16,8 @@ module.exports = (config) => {
         if (limit) cursor.limit(Number(limit));
         if (sort) cursor.sort(sort);
         if (skip) cursor.skip(Number(skip));
-        return cursor.toArray();
+        const anuncios = await cursor.toArray();
+        return anuncios;
       } catch (e) {
         throw e;
       } finally {
