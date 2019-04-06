@@ -95,3 +95,4 @@ npm run installDB
 Once you call http://localhost:3000 you will see the available routes.
 
 You can test the endpints using the swagger UI on http://localhost:3000/api-docs
+
